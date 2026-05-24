@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f0e4;
+  --foreground: #172033;
+  --card: #fffaf2;
+  --card-foreground: #172033;
+  --muted: #eee3d2;
+  --muted-foreground: #687080;
+  --border: #dfd0bb;
+  --input: #fffaf2;
+  --primary: #172033;
+  --primary-foreground: #fffaf2;
+  --accent: #0ea5e9;
+  --accent-foreground: #ffffff;
+  --danger: #b94357;
+  --danger-foreground: #fff7f9;
+  --warning: #d99431;
+  --success: #21825f;
+  --ring: rgba(14, 165, 233, 0.24);
+  --sidebar: #172033;
+  --sidebar-foreground: #fffaf2;
+  --sidebar-muted: rgba(255, 250, 242, 0.72);
+  --sidebar-accent: #0ea5e9;
+  --shadow: 0 12px 32px rgba(23, 32, 51, 0.08);
+  --radius: 8px;
+  --font-sans: var(--font-inter), "Segoe UI", "Aptos", "Helvetica Neue", sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-mono: "Consolas", "SFMono-Regular", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior-y: none;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (display-mode: standalone) {
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: rgba(14, 165, 233, 0.22);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 767px) {
+  body {
+    min-height: 100svh;
+  }
+
+  input,
+  select,
+  textarea {
+    border-radius: 12px !important;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+  }
+}

@@ -1,0 +1,18 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" rx="40" fill="#fffaf2"/>
+  <circle cx="90" cy="90" r="66" fill="#ffffff" stroke="#172033" stroke-width="8"/>
+  <defs>
+    <clipPath id="gavroche-logo-clip">
+      <circle cx="90" cy="90" r="60"/>
+    </clipPath>
+  </defs>
+  <image
+    href="/gavroche-logo.jpg"
+    x="30"
+    y="30"
+    width="120"
+    height="120"
+    preserveAspectRatio="xMidYMid slice"
+    clip-path="url(#gavroche-logo-clip)"
+  />
+</svg>

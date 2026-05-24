@@ -1,0 +1,8 @@
+.next
+node_modules
+.env.local
+out
+*.tsbuildinfo
+.codex-dev-port
+mobile-login-screenshot.png
+*.log
