@@ -25,7 +25,7 @@ export function AdminSidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="sticky top-0 hidden h-screen flex-col border-r border-white/10 bg-[linear-gradient(180deg,#172033_0%,#243149_100%)] px-6 py-7 text-[var(--sidebar-foreground)] lg:flex">
+    <aside className="sticky top-0 hidden h-screen flex-col border-r border-white/10 bg-[var(--sidebar)] px-6 py-7 text-[var(--sidebar-foreground)] lg:flex">
       <Link href="/dashboard/orders" className="mb-10 flex items-center gap-4">
         <div className="relative h-14 w-14 overflow-hidden rounded-full border border-white/20 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
           <Image src="/gavroche-logo.jpg" alt="Librairie Gavroche" fill className="object-cover" sizes="56px" />
@@ -60,11 +60,10 @@ export function AdminSidebar() {
               style={
                 active
                   ? {
-                      background:
-                        "linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%)",
+                      background: "var(--sidebar-accent)",
                       color: "#ffffff",
                       boxShadow:
-                        "0 18px 35px rgba(8,22,41,0.24), inset 0 1px 0 rgba(255,255,255,0.18)",
+                        "0 18px 35px rgba(7,29,45,0.24), inset 0 1px 0 rgba(255,255,255,0.18)",
                     }
                   : {
                       color: "rgba(255,255,255,0.94)",

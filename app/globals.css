@@ -1,28 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f0e4;
-  --foreground: #172033;
-  --card: #fffaf2;
-  --card-foreground: #172033;
-  --muted: #eee3d2;
-  --muted-foreground: #687080;
-  --border: #dfd0bb;
-  --input: #fffaf2;
-  --primary: #172033;
-  --primary-foreground: #fffaf2;
-  --accent: #0ea5e9;
+  --background: #f2f5f7;
+  --foreground: #081d2d;
+  --card: #ffffff;
+  --card-foreground: #081d2d;
+  --muted: #e8eef2;
+  --muted-foreground: #5f6d78;
+  --border: #d5dee5;
+  --input: #ffffff;
+  --primary: #071d2d;
+  --primary-foreground: #f6fbff;
+  --accent: #0aa9d6;
   --accent-foreground: #ffffff;
   --danger: #b94357;
   --danger-foreground: #fff7f9;
   --warning: #d99431;
   --success: #21825f;
-  --ring: rgba(14, 165, 233, 0.24);
-  --sidebar: #172033;
-  --sidebar-foreground: #fffaf2;
-  --sidebar-muted: rgba(255, 250, 242, 0.72);
-  --sidebar-accent: #0ea5e9;
-  --shadow: 0 12px 32px rgba(23, 32, 51, 0.08);
+  --ring: rgba(10, 169, 214, 0.28);
+  --sidebar: #071d2d;
+  --sidebar-foreground: #edf6fb;
+  --sidebar-muted: rgba(237, 246, 251, 0.72);
+  --sidebar-accent: #0aa9d6;
+  --shadow: 0 12px 32px rgba(7, 29, 45, 0.08);
   --radius: 8px;
   --font-sans: var(--font-inter), "Segoe UI", "Aptos", "Helvetica Neue", sans-serif;
   --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
@@ -81,7 +81,7 @@ img {
 }
 
 ::selection {
-  background: rgba(14, 165, 233, 0.22);
+  background: rgba(10, 169, 214, 0.22);
 }
 
 h1,

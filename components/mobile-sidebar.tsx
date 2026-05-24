@@ -45,7 +45,7 @@ export function MobileSidebar({
 
   return (
     <>
-      <div className="sticky top-0 z-30 flex items-center justify-between border-b border-[var(--border)] bg-[var(--background)] px-4 pb-2 pt-[max(0.5rem,env(safe-area-inset-top))] lg:hidden">
+      <div className="sticky top-0 z-30 flex items-center justify-between border-b border-[var(--border)] bg-[#f7fafc] px-4 pb-2 pt-[max(0.5rem,env(safe-area-inset-top))] lg:hidden">
         <button
           type="button"
           onClick={() => setOpen(true)}
@@ -81,7 +81,7 @@ export function MobileSidebar({
 
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-50 flex w-[82vw] max-w-[320px] flex-col bg-white px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-[max(1rem,env(safe-area-inset-top))] shadow-[24px_0_50px_rgba(10,25,47,0.16)] transition-transform duration-200 lg:hidden",
+          "fixed inset-y-0 left-0 z-50 flex w-[82vw] max-w-[320px] flex-col bg-[var(--sidebar)] px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-[max(1rem,env(safe-area-inset-top))] text-[var(--sidebar-foreground)] shadow-[24px_0_50px_rgba(7,29,45,0.24)] transition-transform duration-200 lg:hidden",
           open ? "translate-x-0" : "-translate-x-full",
         )}
         aria-hidden={!open}
@@ -91,8 +91,8 @@ export function MobileSidebar({
             <div className="relative h-12 w-12 overflow-hidden rounded-full border border-[var(--border)] bg-[var(--card)]">
               <Image src="/gavroche-logo.jpg" alt="Librairie Gavroche" fill className="object-cover" sizes="48px" />
             </div>
-            <p className="mt-4 text-base font-semibold">{userName}</p>
-            <p className="mt-1 truncate text-xs text-[var(--muted-foreground)]">
+            <p className="mt-4 text-base font-semibold text-white">{userName}</p>
+            <p className="mt-1 truncate text-xs text-[var(--sidebar-muted)]">
               {userEmail}
             </p>
           </div>
@@ -100,7 +100,7 @@ export function MobileSidebar({
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Fermer le menu"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--muted)] text-[var(--foreground)]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/8 text-white"
           >
             <X className="h-5 w-5" />
           </button>
@@ -119,8 +119,8 @@ export function MobileSidebar({
                 className={cn(
                   "flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-semibold",
                   active
-                    ? "bg-[var(--primary)] text-white"
-                    : "text-[var(--foreground)] hover:bg-[var(--muted)]",
+                    ? "bg-[var(--sidebar-accent)] text-white"
+                    : "text-[var(--sidebar-muted)] hover:bg-white/8 hover:text-white",
                 )}
               >
                 <Icon className="h-5 w-5" />
@@ -134,7 +134,7 @@ export function MobileSidebar({
           <Link
             href="/dashboard/settings"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-3 rounded-2xl bg-[var(--muted)] px-3 py-3 text-sm font-semibold text-[var(--foreground)]"
+            className="flex items-center gap-3 rounded-2xl bg-white/8 px-3 py-3 text-sm font-semibold text-[var(--sidebar-foreground)]"
           >
             <Settings className="h-5 w-5" />
             Parametres du compte
@@ -143,7 +143,7 @@ export function MobileSidebar({
           <form action={logoutAction}>
             <button
               type="submit"
-              className="flex w-full items-center gap-3 rounded-2xl border border-red-200 bg-red-50 px-3 py-3 text-sm font-semibold text-red-700"
+              className="flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-sm font-semibold text-[var(--sidebar-foreground)] transition hover:bg-white/8"
             >
               <LogOut className="h-5 w-5" />
               Deconnexion
