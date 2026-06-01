@@ -1,4 +1,5 @@
 import { AdminSidebar } from "@/components/admin-sidebar"
+import { AdminNotificationListener } from "@/components/admin-notification-listener"
 import { InstallPrompt } from "@/components/install-prompt"
 import { MobileSidebar } from "@/components/mobile-sidebar"
 import { requireAdminPageSession } from "@/lib/auth/guards"
@@ -15,6 +16,7 @@ export default async function DashboardLayout({
 
   return (
     <div className="grid min-h-[100svh] bg-[var(--background)] lg:grid-cols-[280px_1fr]">
+      <AdminNotificationListener />
       <AdminSidebar />
 
       <div className="min-w-0">
