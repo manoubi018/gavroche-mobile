@@ -86,3 +86,46 @@ self.addEventListener("fetch", (event) => {
       .catch(() => caches.match(request).then((cached) => cached || caches.match("/login"))),
   )
 })
+
+self.addEventListener("push", (event) => {
+  const fallbackData = {
+    title: "Nouvelle commande confirmee",
+    body: "Une commande vient d'etre confirmee.",
+    url: "/dashboard/orders",
+  }
+
+  const data = event.data ? event.data.json() : fallbackData
+  const title = data.title || fallbackData.title
+
+  event.waitUntil(
+    self.registration.showNotification(title, {
+      body: data.body || fallbackData.body,
+      icon: data.icon || "/icon-light-32x32.png",
+      badge: data.badge || "/icon-dark-32x32.png",
+      tag: data.tag || "order-confirmed",
+      data: {
+        url: data.url || fallbackData.url,
+      },
+    }),
+  )
+})
+
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close()
+  const targetUrl = event.notification.data?.url || "/dashboard/orders"
+
+  event.waitUntil(
+    self.clients
+      .matchAll({ type: "window", includeUncontrolled: true })
+      .then((clientList) => {
+        for (const client of clientList) {
+          if ("focus" in client) {
+            client.navigate(targetUrl)
+            return client.focus()
+          }
+        }
+
+        return self.clients.openWindow(targetUrl)
+      }),
+  )
+})
